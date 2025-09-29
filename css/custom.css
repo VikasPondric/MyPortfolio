@@ -79,7 +79,7 @@
  }
 
  .btn:hover {
-     transform: translateY(-5px);
+     /* transform: translateY(-5px); */
      box-shadow: 0 15px 30px rgba(79, 70, 229, 0.4);
  }
 
@@ -197,7 +197,6 @@
  .nav-links a:hover {
      color: var(--primary);
  }
-
  .hamburger {
      display: none;
      cursor: pointer;
