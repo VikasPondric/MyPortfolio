@@ -1,0 +1,133 @@
+/* body.light #preloader:before,
+body.light #preloader:after {
+	background-color: #eee;
+} */
+#preloader {
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100vh;
+	width: 100%;
+	z-index: 99999;
+	display: flex;
+	pointer-events: none;
+}
+
+#preloader:before,
+#preloader:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 50%;
+	height: 100%;
+	z-index: -1;
+	background-color: var(--darker);
+	-webkit-transition: all .3s ease 0s;
+	-o-transition: all .3s ease 0s;
+	transition: all .3s ease 0s;
+}
+
+#preloader:after {
+	left: auto;
+	right: 0;
+}
+
+#preloader .line {
+	margin: auto;
+	width: 3px;
+    background-color: var(--primary);
+	border-radius: 4px;
+	height: 250px;
+	position: relative;
+	overflow: hidden;
+	-webkit-transition: all .8s ease 0s;
+	-o-transition: all .8s ease 0s;
+	transition: all .8s ease 0s;
+}
+
+.line:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 3px;
+	height: 0;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	-webkit-animation: animateline 1000ms ease-in-out 0s forwards;
+	-o-animation: animateline 1000ms ease-in-out 0s forwards;
+	animation: animateline 1000ms ease-in-out 0s forwards;
+}
+
+.line:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 1px;
+	height: 100%;
+	background-color: transparent;
+	-webkit-transform: translateY(-100%);
+	-ms-transform: translateY(-100%);
+	-o-transform: translateY(-100%);
+	transform: translateY(-100%);
+	-webkit-animation: animatebgline 1200ms linear 0s infinite;
+	-o-animation: animatebgline 1200ms linear 0s infinite;
+	animation: animatebgline 1200ms linear 0s infinite;
+	animation-delay: 2000ms;
+}
+
+@keyframes animateline {
+	0% {
+		height: 0;
+	}
+
+	100% {
+		height: 100%;
+	}
+}
+
+@keyframes animatebgline {
+	0% {
+		-webkit-transform: translateY(-100%);
+		-ms-transform: translateY(-100%);
+		-o-transform: translateY(-100%);
+		transform: translateY(-100%);
+	}
+
+	100% {
+		-webkit-transform: translateY(200%);
+		-ms-transform: translateY(200%);
+		-o-transform: translateY(200%);
+		transform: translateY(200%);
+	}
+}
+
+.preloaded .line:after {
+	opacity: 0;
+}
+
+.preloaded .line {
+	opacity: 0;
+	height: 100% !important;
+}
+
+.preloaded:before,
+.preloaded:after {
+	-webkit-animation: finishanimation 500ms ease-in-out 500ms forwards;
+	-o-animation: finishanimation 500ms ease-in-out 500ms forwards;
+	animation: finishanimation 500ms ease-in-out 500ms forwards;
+}
+
+@keyframes finishanimation {
+	0% {
+		width: 50%;
+	}
+
+	100% {
+		width: 0;
+	}
+}

@@ -52,6 +52,7 @@
      border: none;
      cursor: pointer;
      font-size: 1rem;
+     text-align: center;
      box-shadow: var(--shadow);
      position: relative;
      overflow: hidden;
@@ -926,6 +927,34 @@
 
  /* Responsive Design */
  @media (max-width: 1100px) {
+    .nav-links {
+         position: fixed;
+         top: 80px;
+         left: -100%;
+         flex-direction: column;
+         background: rgba(15, 23, 42, 0.95);
+         backdrop-filter: blur(10px);
+         width: 100%;
+         text-align: center;
+         transition: var(--transition);
+         padding: 20px 0;
+     }
+
+     .nav-links.active {
+         left: 0;
+     }
+
+     .nav-links li {
+         margin: 15px 0;
+     }
+
+     .hamburger {
+         display: block;
+         font-size: 1.5rem;
+     }
+     #hero {
+    min-height: 100%;
+}
      .hero-title {
          font-size: 3.8rem;
      }
@@ -963,31 +992,7 @@
  }
 
  @media (max-width: 768px) {
-     .nav-links {
-         position: fixed;
-         top: 80px;
-         left: -100%;
-         flex-direction: column;
-         background: rgba(15, 23, 42, 0.95);
-         backdrop-filter: blur(10px);
-         width: 100%;
-         text-align: center;
-         transition: var(--transition);
-         padding: 20px 0;
-     }
-
-     .nav-links.active {
-         left: 0;
-     }
-
-     .nav-links li {
-         margin: 15px 0;
-     }
-
-     .hamburger {
-         display: block;
-         font-size: 1.5rem;
-     }
+     
 
      .portfolio-grid {
          grid-template-columns: 1fr;
