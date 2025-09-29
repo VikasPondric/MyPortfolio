@@ -164,6 +164,7 @@
 
  .nav-links {
      display: flex;
+     align-items: center;
      list-style: none;
  }
 
@@ -197,6 +198,29 @@
  .nav-links a:hover {
      color: var(--primary);
  }
+ 
+.navbar .cv-download{
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    margin-left: 15px;
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+.navbar .cv-download:hover{
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 15px 30px rgba(79, 70, 229, 0.4);
+}
  .hamburger {
      display: none;
      cursor: pointer;
