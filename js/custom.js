@@ -3,7 +3,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Typewriter effect
 const typewriterElement = document.getElementById('typewriter');
-const roles = ["Frontend Developer", "Web Designer", "WordPress Developer", "HTML Developer", "Freelance Developer" ];
+const roles = ["Frontend Developer", "Web Designer", "WordPress Developer", "HTML Developer", "Freelance Developer"];
 let roleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -13,24 +13,19 @@ function typeWriter() {
     const currentRole = roles[roleIndex];
 
     if (isDeleting) {
-        // Deleting characters
         typewriterElement.textContent = currentRole.substring(0, charIndex - 1);
         charIndex--;
         typingSpeed = 100;
     } else {
-        // Typing characters
         typewriterElement.textContent = currentRole.substring(0, charIndex + 1);
         charIndex++;
         typingSpeed = 150;
     }
 
-    // Determine what to do next
     if (!isDeleting && charIndex === currentRole.length) {
-        // Pause at end of word
         typingSpeed = 1500;
         isDeleting = true;
     } else if (isDeleting && charIndex === 0) {
-        // Move to next word
         isDeleting = false;
         roleIndex = (roleIndex + 1) % roles.length;
         typingSpeed = 500;
@@ -48,7 +43,6 @@ function createParticles() {
         const particle = document.createElement('div');
         particle.classList.add('particle');
 
-        // Random size and position
         const size = Math.random() * 10 + 5;
         const posX = Math.random() * 100;
         const posY = Math.random() * 100 + 100;
@@ -63,10 +57,8 @@ function createParticles() {
         particle.style.animationDelay = `${delay}s`;
         particle.style.opacity = Math.random() * 0.4 + 0.1;
 
-        // Random color
         const colors = ['#6366f1', '#8b5cf6', '#ec4899', '#10b981', '#0ea5e9'];
-        const color = colors[Math.floor(Math.random() * colors.length)];
-        particle.style.background = color;
+        particle.style.background = colors[Math.floor(Math.random() * colors.length)];
 
         particlesContainer.appendChild(particle);
     }
@@ -91,26 +83,23 @@ animateItems.forEach(item => {
     );
 });
 
-
 // Sticky header functionality
 let lastScroll = 0;
 
 window.addEventListener('scroll', function () {
     const currentScroll = window.pageYOffset;
 
+    const header = document.querySelector('header');
+
     if (currentScroll <= 100) {
-        document.querySelector('header').classList.remove('scrolled');
-        document.querySelector('header').classList.remove('inactive');
+        header.classList.remove('scrolled', 'inactive');
         return;
     }
 
     if (currentScroll > lastScroll && currentScroll > 100) {
-        // Scrolling down
-        document.querySelector('header').classList.add('scrolled');
-        // document.querySelector('header').classList.add('inactive');
+        header.classList.add('scrolled');
     } else {
-        // Scrolling up
-        document.querySelector('header').classList.add('scrolled');
+        header.classList.add('scrolled');
     }
 
     lastScroll = currentScroll;
@@ -145,14 +134,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Initialize particles and slider on load
+// Initialize particles and typewriter on load
 document.addEventListener('DOMContentLoaded', function () {
     createParticles();
-    showTestimonial(0);
-});
-// Initialize on load
-document.addEventListener('DOMContentLoaded', function () {
-    createParticles();
-    showTestimonial(0);
     typeWriter();
 });
