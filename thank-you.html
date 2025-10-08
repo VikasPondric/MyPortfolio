@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You - Vikas Pondric</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      padding: 0 20px;
+    }
+
+    .thank-container {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 50px 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      max-width: 500px;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #38bdf8;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #cbd5e1;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #38bdf8;
+      color: #0f172a;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #0ea5e9;
+      transform: translateY(-2px);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .checkmark {
+      font-size: 60px;
+      color: #22c55e;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="thank-container">
+    <div class="checkmark">✔️</div>
+    <h1>Thank You!</h1>
+    <p>Your message has been sent successfully.<br>
+       I’ll get back to you as soon as possible.</p>
+    <a href="index.html" class="btn">Back to Home</a>
+  </div>
+</body>
+</html>
