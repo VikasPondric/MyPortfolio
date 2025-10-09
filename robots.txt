@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vikaspondric.vercel.app/sitemap-new.xml
-Sitemap: https://vikaspondric.vercel.app/sitemap.html
+Sitemap: https://vikaspondric.vercel.app/sitemap.xml
